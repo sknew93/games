@@ -1,5 +1,5 @@
 # games
-## This is going to be where i will upload my simple game-py files.
+## This is where i will upload my simple game-py files.
 
 1. Tic-Tac-Toe
   - Written only using functions and an Error class.
