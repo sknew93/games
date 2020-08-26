@@ -9,6 +9,11 @@ def reset_board():
 			,"-","-","-"]
 	return board
 
+player_score = {
+	'Player 1' : 0,
+	'Player 2' : 0
+}
+
 # To display the board initially and after each move is made. 
 def display_board(board):
 	print("_______     _______")
@@ -22,12 +27,14 @@ def gameplay():
 	board = reset_board()
 	# Display the Board
 	display_board(board)
-	player_turn(board)
+	res = player_turn(board)
 	again = input("Do you want to try again? (Y/N) : ").upper()
 	if again == "Y":
 		# pdb.set_trace()
 		return gameplay()
 	else:
+		print('Player 1 has '+ str(res['Player 1']) + " win/s.")
+		print('Player 2 has '+ str(res['Player 2']) + " win/s.")
 		print('Thank you for playing. Come back Soon!')
 		exit()
 
@@ -65,7 +72,7 @@ def player_input(id, board):
 		return player_input(id, board)
 
 # To differentiate between the turns of the two players and also check  if there is a draw.
-def player_turn(board):
+def player_turn(board, score = player_score):
 	keys = ["X","O"]
 	winner = False
 	i = 0
@@ -90,10 +97,13 @@ def player_turn(board):
 
 
 	if winner is True and (i-1)%2==0:
-		print('Player 1 has WON!')
+		player_score.update({"Player 1": player_score['Player 1']+1})
+		print('Player 1 has WON this round !')
 	if winner is True and (i-1)%2 != 0:
-		print('Player 2 has WON!')
+		player_score.update({"Player 2": player_score['Player 2']+1})
+		print('Player 2 has WON this round !')
 
+	return player_score
 
 
 gameplay()
