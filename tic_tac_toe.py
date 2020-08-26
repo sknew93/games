@@ -97,17 +97,3 @@ def player_turn(board):
 
 
 gameplay()
-
-
-
-# board
-# display board
-# play game
-# alternating X and O
-# check win
-	# check rows
-	# check columns
-	# check diagonals
-# check tie
-	#if board full and no win
-# flip player who starts
