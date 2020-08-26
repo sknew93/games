@@ -6,4 +6,5 @@
   - Player 1 and 2 have user input.
   - Will check for tie as well.
   - Game reset or play again functionality
+  - Keeps score for both players if game continued.
   - FUTURE: will include CPU for player 2.
